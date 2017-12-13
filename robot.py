@@ -24,10 +24,10 @@ joints[4].setMaxSpeed(150)
 joints[5].setMaxSpeed(150)
 
 #joint current limits. Still setting manually becuase testing (hold A, run A, acc A, dec, A)
-joints[0].setCurrent(65, 85, 75, 70)
+joints[0].setCurrent(75, 85, 75, 70)
 joints[1].setCurrent(65, 85, 85, 65)
 joints[2].setCurrent(50, 50, 50, 50)
-joints[3].setCurrent(75, 75, 75, 75)
+joints[3].setCurrent(85, 85, 85, 85)
 joints[4].setCurrent(85, 85, 85, 85)
 joints[5].setCurrent(65,65, 65, 65)
 
