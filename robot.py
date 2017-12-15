@@ -118,7 +118,7 @@ while 1:
                 for joint in joints:
                     joint.free()
         
-        if event.code == 'ABS_X':
+        if event.code == 'ABS_Y':
             value = event.state
             if value < -3500:
                 if not joints[0].isBusy(): joints[0].run(1, 20)
@@ -126,7 +126,7 @@ while 1:
                 if not joints[0].isBusy(): joints[0].run(0, 20)
             else:
                 if not joints[0].isBusy(): joints[0].softStop()
-        if event.code == 'ABS_Y':
+        if event.code == 'ABS_X':
             value = event.state
             if value < -3500:
                 if not joints[1].isBusy(): joints[1].run(1, 20)
@@ -134,7 +134,7 @@ while 1:
                 if not joints[1].isBusy(): joints[1].run(0, 20)
             else:
                 if not joints[1].isBusy(): joints[1].softStop()
-        if event.code == 'ABS_RX':
+        if event.code == 'ABS_RY':
             value = event.state
             if value < -3500:
                 if not joints[2].isBusy(): joints[2].run(1, 100)
@@ -142,7 +142,7 @@ while 1:
                 if not joints[2].isBusy(): joints[2].run(0, 100)
             else:
                 if not joints[2].isBusy(): joints[2].softStop()
-        if event.code == 'ABS_RY':
+        if event.code == 'ABS_RX':
             value = event.state
             if value < -3500:
                 if not joints[3].isBusy(): joints[3].run(1, 10)
@@ -153,9 +153,9 @@ while 1:
         if event.code == 'ABS_HAT0Y':
             value = event.state
             if value == 1:
-                if not joints[4].isBusy(): joints[4].run(1, 20)
-            elif value == -1:
                 if not joints[4].isBusy(): joints[4].run(0, 20)
+            elif value == -1:
+                if not joints[4].isBusy(): joints[4].run(1, 20)
             else:
                 if not joints[4].isBusy(): joints[4].softStop()
         if event.code == 'ABS_HAT0X':
