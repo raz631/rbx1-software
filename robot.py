@@ -16,7 +16,7 @@ for joint in joints:
     joint.setMicroSteps(16)
 
 #some initalization stuff that needs cleanup
-joints[0].setMaxSpeed(100)
+joints[0].setMaxSpeed(50)
 joints[1].setMaxSpeed(150)
 joints[2].setMaxSpeed(250)
 joints[3].setMaxSpeed(150)
@@ -27,7 +27,7 @@ joints[5].setMaxSpeed(150)
 joints[0].setCurrent(85, 85, 75, 70)
 joints[1].setCurrent(65, 85, 85, 65)
 joints[2].setCurrent(65, 85, 85, 85)
-joints[3].setCurrent(85, 85, 85, 85)
+joints[3].setCurrent(65, 65, 65, 65)
 joints[4].setCurrent(85, 85, 85, 85)
 joints[5].setCurrent(65, 65, 65, 65)
 
@@ -121,9 +121,9 @@ while 1:
         if event.code == 'ABS_X':
             value = event.state
             if value < -3500:
-                if not joints[0].isBusy(): joints[0].run(1, 35)
+                if not joints[0].isBusy(): joints[0].run(1, 25)
             elif value > 3500:
-                if not joints[0].isBusy(): joints[0].run(0, 35)
+                if not joints[0].isBusy(): joints[0].run(0, 25)
             else:
                 if not joints[0].isBusy(): joints[0].softStop()
         if event.code == 'ABS_Y':
