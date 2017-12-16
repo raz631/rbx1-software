@@ -16,7 +16,7 @@ for joint in joints:
     joint.setMicroSteps(16)
 
 #some initalization stuff that needs cleanup
-joints[0].setMaxSpeed(50)
+joints[0].setMaxSpeed(150)
 joints[1].setMaxSpeed(150)
 joints[2].setMaxSpeed(250)
 joints[3].setMaxSpeed(150)
@@ -26,8 +26,8 @@ joints[5].setMaxSpeed(150)
 #joint current limits. Still setting manually becuase testing (hold A, run A, acc A, dec, A)
 joints[0].setCurrent(65, 85, 75, 70)
 joints[1].setCurrent(65, 85, 85, 65)
-joints[2].setCurrent(65, 65, 65, 65)
-joints[3].setCurrent(65, 65, 65, 65)
+joints[2].setCurrent(50, 50, 50, 50)
+joints[3].setCurrent(70, 70, 70, 70)
 joints[4].setCurrent(85, 85, 85, 85)
 joints[5].setCurrent(65, 65, 65, 65)
 
@@ -121,9 +121,9 @@ while 1:
         if event.code == 'ABS_Y':
             value = event.state
             if value < -3500:
-                if not joints[0].isBusy(): joints[0].run(1, 20)
-            elif value > 3500:
                 if not joints[0].isBusy(): joints[0].run(0, 20)
+            elif value > 3500:
+                if not joints[0].isBusy(): joints[0].run(1, 20)
             else:
                 if not joints[0].isBusy(): joints[0].softStop()
         if event.code == 'ABS_X':
@@ -137,25 +137,25 @@ while 1:
         if event.code == 'ABS_RY':
             value = event.state
             if value < -3500:
-                if not joints[2].isBusy(): joints[2].run(1, 100)
-            elif value > 3500:
                 if not joints[2].isBusy(): joints[2].run(0, 100)
+            elif value > 3500:
+                if not joints[2].isBusy(): joints[2].run(1, 100)
             else:
                 if not joints[2].isBusy(): joints[2].softStop()
         if event.code == 'ABS_RX':
             value = event.state
             if value < -3500:
-                if not joints[3].isBusy(): joints[3].run(1, 10)
-            elif value > 3500:
                 if not joints[3].isBusy(): joints[3].run(0, 10)
+            elif value > 3500:
+                if not joints[3].isBusy(): joints[3].run(1, 10)
             else:
                 if not joints[3].isBusy(): joints[3].softStop()
         if event.code == 'ABS_HAT0Y':
             value = event.state
             if value == 1:
-                if not joints[4].isBusy(): joints[4].run(0, 20)
-            elif value == -1:
                 if not joints[4].isBusy(): joints[4].run(1, 20)
+            elif value == -1:
+                if not joints[4].isBusy(): joints[4].run(0, 20)
             else:
                 if not joints[4].isBusy(): joints[4].softStop()
         if event.code == 'ABS_HAT0X':
