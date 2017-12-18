@@ -28,8 +28,8 @@ joints[0].setCurrent(60, 60, 60, 60)
 joints[1].setCurrent(60, 75, 80, 80)
 joints[2].setCurrent(40, 50, 50, 50)
 joints[3].setCurrent(60, 65, 65, 65)
-joints[4].setCurrent(50, 60, 60, 60)
-joints[5].setCurrent(60, 60, 60, 60)
+joints[4].setCurrent(45, 65, 65, 65)
+joints[5].setCurrent(50, 65, 65, 65)
 
 #setup the gripper
 GPIO.setmode(GPIO.BCM)
