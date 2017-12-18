@@ -24,10 +24,10 @@ joints[4].setMaxSpeed(150)
 joints[5].setMaxSpeed(150)
 
 #joint current limits. Still setting manually becuase testing (hold A, run A, acc A, dec, A)
-joints[0].setCurrent(65, 65, 65, 65)
-joints[1].setCurrent(65, 65, 65, 65)
-joints[2].setCurrent(50, 50, 50, 50)
-joints[3].setCurrent(60, 60, 60, 60)
+joints[0].setCurrent(60, 60, 60, 60)
+joints[1].setCurrent(60, 75, 80, 80)
+joints[2].setCurrent(40, 50, 50, 50)
+joints[3].setCurrent(60, 65, 65, 65)
 joints[4].setCurrent(50, 60, 60, 60)
 joints[5].setCurrent(60, 60, 60, 60)
 
@@ -145,9 +145,9 @@ while 1:
         if event.code == 'ABS_RX':
             value = event.state
             if value < -3500:
-                if not joints[3].isBusy(): joints[3].run(0, 10)
+                if not joints[3].isBusy(): joints[3].run(0, 20)
             elif value > 3500:
-                if not joints[3].isBusy(): joints[3].run(1, 10)
+                if not joints[3].isBusy(): joints[3].run(1, 20)
             else:
                 if not joints[3].isBusy(): joints[3].softStop()
         if event.code == 'ABS_HAT0Y':
