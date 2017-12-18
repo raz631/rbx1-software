@@ -145,9 +145,9 @@ while 1:
         if event.code == 'ABS_RX':
             value = event.state
             if value < -3500:
-                if not joints[3].isBusy(): joints[3].run(0, 20)
+                if not joints[3].isBusy(): joints[3].run(0, 15)
             elif value > 3500:
-                if not joints[3].isBusy(): joints[3].run(1, 20)
+                if not joints[3].isBusy(): joints[3].run(1, 15)
             else:
                 if not joints[3].isBusy(): joints[3].softStop()
         if event.code == 'ABS_HAT0Y':
