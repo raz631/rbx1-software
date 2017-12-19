@@ -27,7 +27,7 @@ joints[5].setMaxSpeed(150)
 joints[0].setCurrent(60, 60, 60, 60)
 joints[1].setCurrent(60, 75, 80, 80)
 joints[2].setCurrent(40, 50, 50, 50)
-joints[3].setCurrent(70, 70, 70, 70)
+joints[3].setCurrent(65, 65, 65, 65)
 joints[4].setCurrent(45, 65, 65, 65)
 joints[5].setCurrent(50, 65, 65, 65)
 
