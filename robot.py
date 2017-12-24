@@ -16,12 +16,12 @@ for joint in joints:
     joint.setMicroSteps(16)
 
 #some initalization stuff that needs cleanup
-joints[0].setMaxSpeed(150)
-joints[1].setMaxSpeed(150)
-joints[2].setMaxSpeed(250)
-joints[3].setMaxSpeed(150)
-joints[4].setMaxSpeed(150)
-joints[5].setMaxSpeed(150)
+joints[0].setMaxSpeed(50)
+joints[1].setMaxSpeed(50)
+joints[2].setMaxSpeed(150)
+joints[3].setMaxSpeed(50)
+joints[4].setMaxSpeed(50)
+joints[5].setMaxSpeed(50)
 
 #joint current limits. Still setting manually becuase testing (hold A, run A, acc A, dec, A)
 joints[0].setCurrent(60, 60, 60, 60)
@@ -121,9 +121,9 @@ while 1:
         if event.code == 'ABS_Y':
             value = event.state
             if value < -3500:
-                if not joints[0].isBusy(): joints[0].run(0, 25)
+                if not joints[0].isBusy(): joints[0].run(0, 35)
             elif value > 3500:
-                if not joints[0].isBusy(): joints[0].run(1, 25)
+                if not joints[0].isBusy(): joints[0].run(1, 35)
             else:
                 if not joints[0].isBusy(): joints[0].softStop()
         if event.code == 'ABS_X':
@@ -137,9 +137,9 @@ while 1:
         if event.code == 'ABS_RY':
             value = event.state
             if value < -3500:
-                if not joints[2].isBusy(): joints[2].run(0, 100)
+                if not joints[2].isBusy(): joints[2].run(0, 120)
             elif value > 3500:
-                if not joints[2].isBusy(): joints[2].run(1, 100)
+                if not joints[2].isBusy(): joints[2].run(1, 120)
             else:
                 if not joints[2].isBusy(): joints[2].softStop()
         if event.code == 'ABS_RX':
